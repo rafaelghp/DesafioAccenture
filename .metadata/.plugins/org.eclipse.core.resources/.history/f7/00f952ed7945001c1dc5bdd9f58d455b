@@ -1,0 +1,15 @@
+package Steps;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DesafioPage {
+	private WebDriver driver;
+	private DSL dsl;
+	
+	public void AcessaPagina() {
+		driver = new ChromeDriver();
+		
+	}
+	
+}

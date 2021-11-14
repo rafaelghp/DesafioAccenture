@@ -1,0 +1,73 @@
+package Steps;
+
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.After;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class DesafioSteps {
+	private WebDriver driver;
+	private DSL dsl;
+	private DesafioPage page;
+	@Given("Que estou acessando o site para envio de cotacao")
+	public void que_estou_acessando_o_site_para_envio_de_cotacao() {
+		driver = new ChromeDriver();
+		driver.get("http://sampleapp.tricentis.com/101/app.php");
+		dsl = new DSL(driver);
+		page = new DesafioPage(driver);
+	}
+
+	@When("preencho o formulario da aba vehicle data")
+	public void preencho_o_formulario_da_aba_vehicle_data() {
+		page.preencheVehicleData();
+	  }
+
+	@When("preencho o formulario da aba insurant data")
+	public void preencho_o_formulario_da_aba_insurant_data() {
+		page.preencheInsurantData();
+	}
+
+	@When("preencho o formulario da aba product data")
+	public void preencho_o_formulario_da_aba_product_data() {
+		dsl.escrevePorId("startdate", "12/26/2021");
+	    dsl.escrevePorIdEnter("insurancesum", "3000000");
+	    dsl.escrevePorIdEnter("meritrating", "Bonus 1");
+	    dsl.clicaPorXpath("//*[@id=\"damageinsurance\"]/option[2]");
+	    dsl.clicaPorXpath("//*[@id=\"insurance-form\"]/div/section[3]/div[5]/p/label[1]");
+	    dsl.clicaPorXpath("//*[@id=\"courtesycar\"]/option[2]");
+	    dsl.clicaPorId("nextselectpriceoption");
+	}
+
+	@When("preencho o formulario da aba price option")
+	public void preencho_o_formulario_da_aba_price_option() throws InterruptedException {
+		dsl.clicaPorXpath("//*[@id=\"priceTable\"]/tfoot/tr/th[2]/label[2]");
+		Thread.sleep(2000);
+		dsl.clicaPorId("nextsendquote");
+	}
+
+	@When("preencho o formulario da aba send quote e pressiono send")
+	public void preencho_o_formulario_da_aba_send_quote_e_pressiono_send() {
+		dsl.escrevePorId("email", "teste@teste.com");
+		dsl.escrevePorId("phone", "999999999");
+		dsl.escrevePorId("username", "teste12");
+		dsl.escrevePorId("password", "Aleatoria1");
+		dsl.escrevePorId("confirmpassword", "Aleatoria1");
+		dsl.escrevePorId("Comments", "Este é um teste automatizado");
+		dsl.clicaPorId("sendemail");
+	}
+
+	@Then("a cotacao deve ser enviada por email")
+	public void a_cotacao_deve_ser_enviada_por_email() throws InterruptedException {
+		Thread.sleep(10000);
+		String  Mensagem = dsl.recuperaTexto("/html/body/div[4]/h2");
+		Assert.assertEquals(Mensagem,"Sending e-mail success!");
+	}
+	@After
+	public void fim(){
+		driver.quit();
+	}
+}

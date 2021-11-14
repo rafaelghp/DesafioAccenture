@@ -1,0 +1,53 @@
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Desafio {
+	@Given("eu quero enviar uma cotacao por email")
+	public void eu_quero_enviar_uma_cotacao_por_email() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Acesso o sistema de cotacao")
+	public void acesso_o_sistema_de_cotacao() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho os dados da aba Vehicle data")
+	public void preencho_os_dados_da_aba_vehicle_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho os dados da aba insurant data")
+	public void preencho_os_dados_da_aba_insurant_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho os dados da aba product data")
+	public void preencho_os_dados_da_aba_product_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho os dados da aba select price option")
+	public void preencho_os_dados_da_aba_select_price_option() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho os dados da aba send quote e pressiono send")
+	public void preencho_os_dados_da_aba_send_quote_e_pressiono_send() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("a cota??o deve ser enviada por email")
+	public void a_cota_o_deve_ser_enviada_por_email() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

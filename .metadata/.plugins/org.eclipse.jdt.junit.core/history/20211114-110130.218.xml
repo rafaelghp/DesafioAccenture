@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runner" project="DesafioAccenture" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="Desafio.runner" time="7.9">
+    <testsuite name="Desafio T�cnico Accenture" time="7.9">
+      <testcase name="Enviar cotacao por email" classname="Desafio T�cnico Accenture" time="7.9">
+        <error>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input id="selectplatinum" name="Select Option" type="radio" value="Platinum" style="position: absolute; left: -9999px;"&gt; is not clickable at point (677, 323). Other element would receive the click: &lt;span class="ideal-radio"&gt;&lt;/span&gt;
+  (Session info: chrome=95.0.4638.69)
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-GAAJROB', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8846ba26c1ae2e0d51630dd5179e4084, clickElement {id=4583bfb2-3b30-43d0-84b5-453f5ae8fe0d}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.69, chrome: {chromedriverVersion: 95.0.4638.69 (6a1600ed572fe..., userDataDir: C:\Users\rafae\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57336}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57336/devtoo..., se:cdpVersion: 95.0.4638.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (8846ba26c1ae2e0d51630dd5179e4084)] -&gt; xpath: //*[@id="selectplatinum"]]
+Session ID: 8846ba26c1ae2e0d51630dd5179e4084&#13;
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)&#13;
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)&#13;
+	at Desafio.Desafio.preencho_o_formulario_da_aba_price_option(Desafio.java:69)&#13;
+	at ✽.preencho o formulario da aba price option(classpath:Desafio/Desafio.feature:8)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

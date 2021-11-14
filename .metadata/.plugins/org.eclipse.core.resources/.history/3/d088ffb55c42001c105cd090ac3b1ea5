@@ -1,0 +1,12 @@
+Feature: Desafio técnico 
+  @Desafio @UX
+  Scenario: 
+    Given eu quero enviar uma cotação por email 
+    When Acesso o sistema de cotação
+    And preencho os dados da aba Vehicle data
+    And preencho os dados da aba insurant data
+    And preencho os dados da aba product data
+    And preencho os dados da aba select price option
+    And preencho os dados da aba send quote e pressiono send
+    Then a cotação deve ser enviada por email 
+

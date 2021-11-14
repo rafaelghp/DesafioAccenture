@@ -1,0 +1,78 @@
+package Desafio;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Desafio {
+	private WebDriver driver;
+	@Given("Que estou acessando o site para envio de cotacao")
+	public void que_estou_acessando_o_site_para_envio_de_cotacao() {
+		driver = new ChromeDriver();
+		driver.get("http://sampleapp.tricentis.com/101/app.php");
+	}
+
+	@When("preencho o formulario da aba vehicle data")
+	public void preencho_o_formulario_da_aba_vehicle_data() {
+	  driver.findElement(By.id("entervehicledata")).click();
+	  driver.findElement(By.id("make")).sendKeys("BMW"+ Keys.RETURN);
+	  driver.findElement(By.id("model")).sendKeys("Moped"+Keys.RETURN);
+	  driver.findElement(By.id("cylindercapacity")).sendKeys("200");
+	  driver.findElement(By.id("engineperformance")).sendKeys("200");
+	  driver.findElement(By.id("dateofmanufacture")).sendKeys("10/10/2010");
+	  driver.findElement(By.id("numberofseats")).sendKeys("2"+Keys.RETURN);
+	 // driver.findElement(By.id("righthanddriveyes")).click();
+	  driver.findElement(By.id("numberofseatsmotorcycle")).sendKeys("2"+Keys.RETURN);
+	  driver.findElement(By.id("fuel")).sendKeys("petrol"+Keys.RETURN);
+	  driver.findElement(By.id("payload")).sendKeys("1000");
+	  driver.findElement(By.id("totalweight")).sendKeys("1500");
+	  driver.findElement(By.id("listprice")).sendKeys("5000");
+	  driver.findElement(By.id("licenseplatenumber")).sendKeys("200");
+	  driver.findElement(By.id("annualmileage")).sendKeys("150");
+	}
+
+	@When("preencho o formulario da aba insurant data")
+	public void preencho_o_formulario_da_aba_insurant_data() {
+		  driver.findElement(By.id("enterinsurantdata")).click();
+		  driver.findElement(By.id("firstname")).sendKeys("Rafael");
+		  driver.findElement(By.id("lastname")).sendKeys("Lima");
+		  driver.findElement(By.id("birthdate")).sendKeys("04/04/1992");
+		  driver.findElement(By.id("streetaddress")).sendKeys("rua teste");
+		  driver.findElement(By.id("country")).sendKeys("Brazil"+Keys.RETURN);
+		  driver.findElement(By.id("zipcode")).sendKeys("99999999");
+		  driver.findElement(By.id("city")).sendKeys("Porto alegre");
+		  driver.findElement(By.xpath("//*[@id=\"occupation\"]/option[4]")).click();
+		  driver.findElement(By.xpath("//*[@id=\"insurance-form\"]/div/section[2]/div[10]/p/label[2]")).click();
+		  driver.findElement(By.id("website")).sendKeys("Teste@teste.com");
+		  
+	}
+
+	@When("preencho o formulario da aba product data")
+	public void preencho_o_formulario_da_aba_product_data() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho o formulario da aba price option")
+	public void preencho_o_formulario_da_aba_price_option() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("preencho o formulario da aba send quote e pressiono send")
+	public void preencho_o_formulario_da_aba_send_quote_e_pressiono_send() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("a cotacao deve ser enviada por email")
+	public void a_cotacao_deve_ser_enviada_por_email() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

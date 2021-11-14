@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runner" project="DesafioAccenture" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="Runners.runner" time="19.848">
+    <testsuite name="Desafio T�cnico Accenture" time="19.848">
+      <testcase name="Enviar cotacao por email" classname="Desafio T�cnico Accenture" time="19.848"/>
+    </testsuite>
+  </testsuite>
+</testrun>

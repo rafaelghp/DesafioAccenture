@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runner" project="DesafioAccenture" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="Desafio.runner" time="6.449">
+    <testsuite name="Desafio T�cnico Accenture" time="6.449">
+      <testcase name="Enviar cotacao por email" classname="Desafio T�cnico Accenture" time="6.449">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at Desafio.Desafio.preencho_o_formulario_da_aba_product_data(Desafio.java:58)&#13;
+	at ✽.preencho o formulario da aba product data(classpath:Desafio/Desafio.feature:7)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

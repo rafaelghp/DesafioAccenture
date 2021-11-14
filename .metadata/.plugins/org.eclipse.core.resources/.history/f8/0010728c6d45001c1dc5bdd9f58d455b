@@ -1,0 +1,121 @@
+package Steps;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.After;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.cucumber.messages.types.Scenario;
+
+public class DesafioSteps {
+	private WebDriver driver;
+	@Given("Que estou acessando o site para envio de cotacao")
+	public void que_estou_acessando_o_site_para_envio_de_cotacao() {
+		driver = new ChromeDriver();
+		driver.get("http://sampleapp.tricentis.com/101/app.php");
+	}
+
+	@When("preencho o formulario da aba vehicle data")
+	public void preencho_o_formulario_da_aba_vehicle_data() {
+	  driver.findElement(By.id("entervehicledata")).click();
+	  driver.findElement(By.id("make")).sendKeys("BMW"+ Keys.RETURN);
+	  driver.findElement(By.id("model")).sendKeys("Moped"+Keys.RETURN);
+	  driver.findElement(By.id("cylindercapacity")).sendKeys("200");
+	  driver.findElement(By.id("engineperformance")).sendKeys("200");
+	  driver.findElement(By.id("dateofmanufacture")).sendKeys("10/10/2010");
+	  driver.findElement(By.id("numberofseats")).sendKeys("2"+Keys.RETURN);
+	 // driver.findElement(By.id("righthanddriveyes")).click();
+	  driver.findElement(By.id("numberofseatsmotorcycle")).sendKeys("2"+Keys.RETURN);
+	  driver.findElement(By.id("fuel")).sendKeys("petrol"+Keys.RETURN);
+	  driver.findElement(By.id("payload")).sendKeys("1000");
+	  driver.findElement(By.id("totalweight")).sendKeys("1500");
+	  driver.findElement(By.id("listprice")).sendKeys("5000");
+	  driver.findElement(By.id("licenseplatenumber")).sendKeys("200");
+	  driver.findElement(By.id("annualmileage")).sendKeys("150");
+	  driver.findElement(By.id("nextenterinsurantdata")).click();
+	  }
+
+	@When("preencho o formulario da aba insurant data")
+	public void preencho_o_formulario_da_aba_insurant_data() {
+		  driver.findElement(By.id("firstname")).sendKeys("Rafael");
+		  driver.findElement(By.id("lastname")).sendKeys("Lima");
+		  driver.findElement(By.id("birthdate")).sendKeys("04/04/1992");
+		  driver.findElement(By.id("streetaddress")).sendKeys("rua teste");
+		  driver.findElement(By.id("country")).sendKeys("Brazil"+Keys.RETURN);
+		  driver.findElement(By.id("zipcode")).sendKeys("99999999");
+		  driver.findElement(By.id("city")).sendKeys("Porto alegre");
+		  driver.findElement(By.xpath("//*[@id=\"occupation\"]/option[4]")).click();
+		  driver.findElement(By.xpath("//*[@id=\"insurance-form\"]/div/section[2]/div[10]/p/label[2]")).click();
+		  driver.findElement(By.id("website")).sendKeys("Teste.com");
+		  driver.findElement(By.id("nextenterproductdata")).click();  
+	}
+
+	@When("preencho o formulario da aba product data")
+	public void preencho_o_formulario_da_aba_product_data() {
+	   driver.findElement(By.id("startdate")).sendKeys("12/26/2021");
+	   driver.findElement(By.id("insurancesum")).sendKeys("3000000"+Keys.RETURN);
+	   driver.findElement(By.id("meritrating")).sendKeys("Bonus 1"+Keys.RETURN);
+	   driver.findElement(By.xpath("//*[@id=\"damageinsurance\"]/option[2]")).click();
+	   driver.findElement(By.xpath("//*[@id=\"insurance-form\"]/div/section[3]/div[5]/p/label[1]")).click();
+	   driver.findElement(By.xpath("//*[@id=\"courtesycar\"]/option[2]")).click();
+	   driver.findElement(By.id("nextselectpriceoption")).click();
+	}
+
+	@When("preencho o formulario da aba price option")
+	public void preencho_o_formulario_da_aba_price_option() throws InterruptedException {
+	   driver.findElement(By.xpath("//*[@id=\"priceTable\"]/tfoot/tr/th[2]/label[2]")).click();
+	   Thread.sleep(2000);
+	   driver.findElement(By.id("nextsendquote")).click();
+	}
+
+	@When("preencho o formulario da aba send quote e pressiono send")
+	public void preencho_o_formulario_da_aba_send_quote_e_pressiono_send() {
+		driver.findElement(By.id("email")).sendKeys("teste@teste.com");
+		driver.findElement(By.id("phone")).sendKeys("999999999");
+		driver.findElement(By.id("username")).sendKeys("teste12");
+		driver.findElement(By.id("password")).sendKeys("Aleatoria1");
+		driver.findElement(By.id("confirmpassword")).sendKeys("Aleatoria1");
+		driver.findElement(By.id("Comments")).sendKeys("Este é um teste automatizado");
+		driver.findElement(By.id("sendemail")).click();
+	}
+
+	@Then("a cotacao deve ser enviada por email")
+	public void a_cotacao_deve_ser_enviada_por_email() throws InterruptedException {
+		Thread.sleep(10000);
+		String  Mensagem = driver.findElement(By.xpath("/html/body/div[4]/h2")).getText(); 
+		Assert.assertEquals(Mensagem,"Sending e-mail success!");
+	}
+	/*@After
+	public void Evidencia(Scenario cenario) {
+		File file =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(file,new File("target/Evidencias/"+cenario.getId()+".jpg"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}*/
+	@After(order = 0)
+	
+	public void fim(Scenario cenario){
+		File file =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(file,new File("target/Evidencias/"+cenario.getId()+".jpg"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		driver.quit();
+	}
+}

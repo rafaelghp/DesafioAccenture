@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runner" project="DesafioAccenture" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="Runners.runner" time="4.898">
+    <testsuite name="Desafio T�cnico Accenture" time="4.898">
+      <testcase name="Enviar cotacao por email" classname="Desafio T�cnico Accenture" time="4.898">
+        <error>java.lang.NullPointerException: Cannot invoke "Steps.DSL.clicaPorId(String)" because "this.dsl" is null&#13;
+	at Steps.DesafioSteps.preencho_o_formulario_da_aba_vehicle_data(DesafioSteps.java:25)&#13;
+	at ✽.preencho o formulario da aba vehicle data(file:///C:/Users/rafae/eclipse-workspace/DesafioAccenture/src/test/resources/Features/Desafio.feature:5)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>
